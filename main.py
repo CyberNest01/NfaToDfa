@@ -21,13 +21,14 @@ class NfaToDfa:
         self.check_end_dfa()
         self.is_end()
         self.insert_none_dfa()
-        print(self.nfa_matrix)
-        print('\n')
-        print(self.dfa_matrix)
-        print('\n')
-        print(self.nfa_status_matrix)
-        print('\n')
-        print(self.dfa_status_matrix)
+        return self.dfa_matrix, self.dfa_status_matrix
+        # print(self.nfa_matrix)
+        # print('\n')
+        # print(self.dfa_matrix)
+        # print('\n')
+        # print(self.nfa_status_matrix)
+        # print('\n')
+        # print(self.dfa_status_matrix)
 
     def check_end_dfa(self) -> None:
         count = 0
@@ -199,7 +200,3 @@ class NfaToDfa:
                 continue
             return which_process
         return ''
-
-
-if __name__ == '__main__':
-    NfaToDfa().main()
