@@ -131,10 +131,23 @@ def create_graph() -> None:
 
 def create_list_for_graph() -> list:
     edge_list = []
+    value = []
+    item = []
     for dfa in DATA[0]:
         if dfa.item(0) == '_____main_____':
             continue
-        edge_list.append((dfa.item(0), dfa.item(1), {'w': dfa.item(2)}))
+        if [dfa.item(0), dfa.item(1), dfa.item(2)] in item:
+            continue
+        value.append(dfa.item(2))
+        for i in DATA[0]:
+            if i.item(0) == dfa.item(0) and i.item(1) == dfa.item(1) and i.item(2) != dfa.item(2):
+                value.append(i.item(2))
+                item.append([i.item(0), i.item(1), i.item(2)])
+        value = list(set(value))
+        value.sort()
+        value = f'{",".join(str(e) for e in value)}'
+        edge_list.append((dfa.item(0), dfa.item(1), {'w': value}))
+        value = []
     return edge_list
 
 
@@ -150,7 +163,6 @@ def create_list_status_dfa() -> list:
 
 if __name__ == '__main__':
     create_graph()
-    # create_list_for_graph()
 
 
 
