@@ -1,0 +1,10 @@
+.idea
+media
+*.pyc
+*.zip
+*.idea
+.env
+.vscode
+*.sql
+*.log
+*.xlsx

@@ -163,6 +163,9 @@ def create_list_status_dfa() -> list:
 
 if __name__ == '__main__':
     create_graph()
+    print(DATA[0])
+    print('\n')
+    print(DATA[1])
 
 
 
