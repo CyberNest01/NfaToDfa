@@ -22,13 +22,6 @@ class NfaToDfa:
         self.is_end()
         self.insert_none_dfa()
         return self.dfa_matrix, self.dfa_status_matrix
-        # print(self.nfa_matrix)
-        # print('\n')
-        # print(self.dfa_matrix)
-        # print('\n')
-        # print(self.nfa_status_matrix)
-        # print('\n')
-        # print(self.dfa_status_matrix)
 
     def check_end_dfa(self) -> None:
         count = 0
